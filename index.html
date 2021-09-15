@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>hi</h1>
+    <pre>
+    $ git --version
+// $ sudo apt install git-all
+$ git config --global user.name "YOUR_USERNAME" 
+$ git config --global user.email "im_satoshi@musk.com"
+$ git config --global --list # To check the info you just provided
+https://help.github.com/articles/checking-for-existing-ssh-keys/
+
+$ ls -al ~/.ssh
+# Lists the files in your .ssh directory, if they exist; should end with .pub
+# Create ssh-key:
+$ ssh-keygen -t ed25519 -C "your_email@example.com"
+> Enter a file in which to save the key (/home/you/.ssh/id_ed25519): [Press enter]
+> Enter passphrase (empty for no passphrase): [Type a passphrase]
+> Enter same passphrase again: [Type passphrase again]
+$ eval "$(ssh-agent -s)"
+> Agent pid 59566
+$ ssh-add ~/.ssh/id_ed25519
+# Adding a new ssh ket to your github account
+$ cat ~/.ssh/id_ed25519.pub
+# Then select and copy the contents of the id_ed25519.pub file
+# displayed in the terminal to your clipboard
+#> Settings -> SSH and GPG Keys -> new SSH key -> Title: description, key : $ cat ~/.ssh/id_ed25519.pub -> add ssh key -> password confirmation.
+
+$ cd Desktop/git-local
+$ touch README.md    # To create a README file for the repository$ git init    
+$ git add .  # Adds all the files in the local repository and stages them for commit
+#   OR if you want to add a specific file
+$ git add README.md # To add a specific file
+$ git status # Lists all new or modified files to be committed
+$ git commit -m "First commit"# The message in the " " is given so that the other users can read the message and see what changes you made
+$ git reset HEAD~1# Remove the most recent commit# Commit again!
+$ git remote add origin git@github.com:Willemgtn/git-practice.git
+	# sets the new remote
+$ git remote -v# List the remote connections you have to other repositories.
+$ git remote remove origin // if needed having multiple repo
+$ git push -u origin master # pushes changes to origin
+$ git diff # To show the files changes not yet staged
+#   Revert back to the last committed version to the Git Repo:
+#   Now you can choose to revert back to the last committed version by entering:
+$ git checkout .
+#   OR for a specific file
+$ git checkout -- <filename>
+$ git log
+#   Each time you make changes that you want to be reflected on GitHub, the following are the most common flow of commands:
+$ git add .$ git status # Lists all new or modified files to be committed$ git commit -m "Second commit"$ git push -u origin master
+$ git clone remote_repository_URL
+#   So to make sure those changes are reflected on my local copy of the repo:
+$ git pull origin master
+$ git fetch    
+#    AND
+$ git merge
+#   gitignore
+$ touch .gitignore
+s
+    </pre>
+</body>
+</html>
